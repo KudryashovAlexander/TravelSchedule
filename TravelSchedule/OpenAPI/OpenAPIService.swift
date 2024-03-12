@@ -1,9 +1,15 @@
-// 1. Импортируем библиотеки
 import OpenAPIRuntime
+import Foundation
 import OpenAPIURLSession
 
-// 2. Улучшаем читаемость кода — необязательный шаг
 typealias NearestStations = Components.Schemas.Stations
+typealias NearestCity = Components.Schemas.City
+typealias CarrierInformation = Components.Schemas.Carriers
+typealias ScheduleBetweenStations = Components.Schemas.ScheduleBetweenStations
+typealias ScheduleStation = Components.Schemas.ScheduleStation
+typealias RouteStations = Components.Schemas.RouteStations
+typealias StationsList = Components.Schemas.StationsList
+typealias Copyright = Components.Schemas.Copyright
 
 let apiKey = "d37fd47c-1133-4d19-93c0-3dda0dee0237"
 
@@ -12,41 +18,85 @@ protocol NearestStationsServiceProtocol {
 }
 
 final class NearestStationsService: NearestStationsServiceProtocol {
-  private let client: Client
-  private let apikey: String
-  
-  init(client: Client, apikey: String) {
-    self.client = client
-    self.apikey = apikey
-  }
-  
-  func getNearestStations(lat: Double, lng: Double, distance: Int) async throws -> NearestStations {
-  // В документе с описанием запроса мы задали параметры apikey, lat, lng и distance
-  // Для вызова сгенерированной функции нужно передать эти параметры
-    let response = try await client.getNearestStations(query: .init(
-        apikey: apikey,
-        lat: lat,
-        lng: lng,
-        distance: distance
-    ))
-    return try response.ok.body.json
-  }
+    private let client: Client
+    private let apikey: String
     
-    func stations() throws {
-            let client = Client(
-                serverURL: try Servers.server1(),
-                transport: URLSessionTransport()
-            )
-            
-            let service = NearestStationsService(
-                client: client,
-                apikey: apiKey
-            )
-            
-            Task {
-                let stations = try await service.getNearestStations(lat: 59.864177, lng: 30.319163, distance: 50)
-                print(stations)
-            }
-        }
-}
+    init(client: Client, apikey: String) {
+        self.client = client
+        self.apikey = apikey
+    }
+  
+    // Расписание между станциями
+    func getScheduleBetweenStations(from: String, to: String) async throws -> ScheduleBetweenStations {
+        let responce = try await client.getScheduleBetweenStations(query: .init(
+            apikey: apikey,
+            from: from,
+            to: to))
+        return try responce.ok.body.json
+    }
+    
+    // Расписание станции
+    func getScheduleStation(station: String) async throws -> ScheduleStation {
+        let responce = try await client.getScheduleStation(query: .init(
+            apikey: apikey,
+            station: station))
+        return try responce.ok.body.json
+    }
+    
+    // Список станций следования
+    func getRouteStations(uid: String) async throws -> RouteStations {
+        let responce = try await client.getRouteStations(query: .init(
+            apikey: apikey,
+            uid: uid))
+        return try responce.ok.body.json
+    }
 
+    // Ближайшие станции
+    func getNearestStations(lat: Double, lng: Double, distance: Int) async throws -> NearestStations {
+        let response = try await client.getNearestStations(query: .init(
+            apikey: apikey,
+            lat: lat,
+            lng: lng,
+            distance: distance
+        ))
+        return try response.ok.body.json
+    }
+    
+    // Ближайший город
+    func getNearestCity(lat: Double, lng: Double, distance: Int) async throws -> NearestCity {
+        let response = try await client.getNearestCity(query: .init(
+          apikey: apikey,
+          lat: lat,
+          lng: lng,
+          distance: distance
+        ))
+        return try response.ok.body.json
+    }
+    
+    // Информация о перевозчике
+    func getCarriersInformation(code: String) async throws -> CarrierInformation {
+        let responce = try await client.getСarrierInformation(query: .init(
+            apikey: apikey,
+            code: code))
+        return try responce.ok.body.json
+    }
+    
+    // Список станций
+    func getStationsList() async throws -> StationsList {
+        let responce = try await client.getStationsList(query: .init(
+            apikey: apikey,
+            format: .json))
+        let html = try responce.ok.body.html
+        let data = try await Data(collecting: html, upTo: 1024*1024*50)
+        print(data)
+        let allStations = try JSONDecoder().decode(StationsList.self, from: data)
+        return allStations
+    }
+    
+    // Копирайт
+    func getCopyRight() async throws -> Copyright {
+        let responce = try await client.copyright(query: .init(apikey: apikey))
+        return try responce.ok.body.json
+    }
+    
+}
