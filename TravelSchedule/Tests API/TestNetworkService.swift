@@ -15,10 +15,7 @@ final class TestNetworkService {
             serverURL: try Servers.server1(),
             transport: URLSessionTransport()
         )
-        let service = NearestStationsService(
-            client: client,
-            apikey: apiKey
-        )
+        let service = NearestStationsService(client: client)
         return service
     }
     

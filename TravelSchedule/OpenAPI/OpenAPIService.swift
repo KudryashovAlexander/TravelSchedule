@@ -11,17 +11,24 @@ typealias RouteStations = Components.Schemas.RouteStations
 typealias StationsList = Components.Schemas.StationsList
 typealias Copyright = Components.Schemas.Copyright
 
-let apiKey = "d37fd47c-1133-4d19-93c0-3dda0dee0237"
+fileprivate let APIKey = "d37fd47c-1133-4d19-93c0-3dda0dee0237"
 
 protocol NearestStationsServiceProtocol {
-  func getNearestStations(lat: Double, lng: Double, distance: Int) async throws -> NearestStations
+    func getScheduleBetweenStations(from: String, to: String) async throws -> ScheduleBetweenStations
+    func getScheduleStation(station: String) async throws -> ScheduleStation
+    func getRouteStations(uid: String) async throws -> RouteStations
+    func getNearestStations(lat: Double, lng: Double, distance: Int) async throws -> NearestStations
+    func getNearestCity(lat: Double, lng: Double, distance: Int) async throws -> NearestCity
+    func getCarriersInformation(code: String) async throws -> CarrierInformation
+    func getStationsList() async throws -> StationsList
+    func getCopyRight() async throws -> Copyright
 }
 
 final class NearestStationsService: NearestStationsServiceProtocol {
     private let client: Client
     private let apikey: String
     
-    init(client: Client, apikey: String) {
+    init(client: Client, apikey: String = APIKey) {
         self.client = client
         self.apikey = apikey
     }
