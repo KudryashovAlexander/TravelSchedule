@@ -1,6 +1,43 @@
 //Main
 "main.from" = "Откуда";
 "main.to" = "Куда";
+"main.find" = "Найти";
+
+"main.yes" = "Да";
+"main.no" = "Нет";
 
 //Check city
 "checkCity.city" = "Выбор города";
+"checkCity.addRequest" = "Введите запрос";
+"checkCity.notFound" = "Город не найден";
+
+//Check station
+"checkStation.station" = "Выбор станции";
+"checkStation.addRequest" = "Введите запрос";
+"checkStation.notFound" = "Станция не найдена";
+
+//Carriers
+"carriers.checkTime" = "Уточнить время";
+"carriers.information" = "Информация о перевозчике";
+"carriers.email" = "Email";
+"carriers.phone" = "Телефон";
+
+//Filter
+"filter.depTime" = "Время отправления";
+"filter.options" = "Показывать варианты с пересадками";
+"filter.morning" = "Утро 06:00 - 12:00";
+"filter.dayTime" = "День 12:00 - 18:00";
+"filter.evening" = "Вечер 18:00 - 00:00";
+"filter.night" = "Ночь 00:00 - 06:00";
+"filter.apply" = "Применить";
+
+
+//settings
+"settings.darktheme" = "Темная тема";
+"settings.politycy" = "Пользовательское соглашение";
+"settings.apiTitle" = "Приложение использует API «Яндекс.Расписания»";
+"settings.apiVersion" = "Версия 1.0 (beta)";
+
+//NetworkError
+"networkError.server" = "Ошибка сервера";
+"networkError.connect" = "Нет интернета";
