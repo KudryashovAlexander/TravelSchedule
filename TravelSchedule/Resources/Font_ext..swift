@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 extension Font {
     
     enum Regular {

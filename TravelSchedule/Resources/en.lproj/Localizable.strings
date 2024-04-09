@@ -1,0 +1,6 @@
+//Main
+"main.from" = "Откуда";
+"main.to" = "Куда";
+
+//Check city
+"checkCity.city" = "Выбор города";

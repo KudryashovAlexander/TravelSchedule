@@ -12,6 +12,8 @@
 		7FC9EAEB2BC5652800922431 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEA2BC5652800922431 /* Colors.xcassets */; };
 		7FC9EAED2BC5653400922431 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEC2BC5653400922431 /* Icons.xcassets */; };
 		7FC9EAF02BC5680C00922431 /* Font_ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEF2BC5680C00922431 /* Font_ext..swift */; };
+		7FC9EAF42BC5964000922431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAF62BC5964000922431 /* Localizable.strings */; };
+		7FC9EAF82BC5981700922431 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EAF72BC5981700922431 /* Strings+Generated.swift */; };
 		7FC9F0612BA0601600C5C63D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9F0602BA0601600C5C63D /* ApiService.swift */; };
 		7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */; };
 		7FD735EF2B9314FF00C1C537 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EE2B9314FF00C1C537 /* ContentView.swift */; };
@@ -30,6 +32,8 @@
 		7FC9EAEA2BC5652800922431 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7FC9EAEC2BC5653400922431 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		7FC9EAEF2BC5680C00922431 /* Font_ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font_ext..swift; sourceTree = "<group>"; };
+		7FC9EAF52BC5964000922431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7FC9EAF72BC5981700922431 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		7FC9F0602BA0601600C5C63D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		7FD735E92B9314FF00C1C537 /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScheduleApp.swift; sourceTree = "<group>"; };
@@ -76,21 +80,30 @@
 		7FC9EAE92BC5642E00922431 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */,
 				7FD735EE2B9314FF00C1C537 /* ContentView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
 		};
-		7FC9EAEE2BC567D900922431 /* Helpers */ = {
+		7FC9EAEE2BC567D900922431 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7FC9EAF12BC593C400922431 /* Generated */,
 				7FD735F02B93150100C1C537 /* Images.xcassets */,
 				7FC9EAEA2BC5652800922431 /* Colors.xcassets */,
 				7FC9EAEC2BC5653400922431 /* Icons.xcassets */,
 				7FC9EAEF2BC5680C00922431 /* Font_ext..swift */,
+				7FC9EAF62BC5964000922431 /* Localizable.strings */,
 			);
-			path = Helpers;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7FC9EAF12BC593C400922431 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				7FC9EAF72BC5981700922431 /* Strings+Generated.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		7FD735E02B9314FF00C1C537 = {
@@ -112,9 +125,10 @@
 		7FD735EB2B9314FF00C1C537 /* TravelSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */,
 				7FC9EAE82BC5640A00922431 /* Service */,
 				7FC9EAE92BC5642E00922431 /* Scene */,
-				7FC9EAEE2BC567D900922431 /* Helpers */,
+				7FC9EAEE2BC567D900922431 /* Resources */,
 				7FD735F22B93150100C1C537 /* Preview Content */,
 			);
 			path = TravelSchedule;
@@ -209,6 +223,7 @@
 				7FC9EAEB2BC5652800922431 /* Colors.xcassets in Resources */,
 				7FD735F42B93150100C1C537 /* Preview Assets.xcassets in Resources */,
 				7FD736152B99A92700C1C537 /* openapi-generator-config.yaml in Resources */,
+				7FC9EAF42BC5964000922431 /* Localizable.strings in Resources */,
 				7FD735F12B93150100C1C537 /* Images.xcassets in Resources */,
 				7FC9EAED2BC5653400922431 /* Icons.xcassets in Resources */,
 				7FD736132B99A8C300C1C537 /* openapi.yaml in Resources */,
@@ -228,6 +243,7 @@
 				7FC9EAF02BC5680C00922431 /* Font_ext..swift in Sources */,
 				7FD736172B99A9F100C1C537 /* OpenAPIService.swift in Sources */,
 				7F4353A22B9EFB170042F02C /* TestNetworkService.swift in Sources */,
+				7FC9EAF82BC5981700922431 /* Strings+Generated.swift in Sources */,
 				7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +256,17 @@
 			productRef = 7FD7360F2B99A73300C1C537 /* OpenAPIGenerator */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7FC9EAF62BC5964000922431 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FC9EAF52BC5964000922431 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7FD735F52B93150100C1C537 /* Debug */ = {
