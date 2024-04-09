@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		7F43539C2B9EF29C0042F02C /* ServerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43539B2B9EF29C0042F02C /* ServerTestView.swift */; };
 		7F4353A22B9EFB170042F02C /* TestNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4353A12B9EFB170042F02C /* TestNetworkService.swift */; };
+		7FC9EAEB2BC5652800922431 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEA2BC5652800922431 /* Colors.xcassets */; };
+		7FC9EAED2BC5653400922431 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEC2BC5653400922431 /* Icons.xcassets */; };
+		7FC9EAF02BC5680C00922431 /* Font_ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEF2BC5680C00922431 /* Font_ext..swift */; };
 		7FC9F0612BA0601600C5C63D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9F0602BA0601600C5C63D /* ApiService.swift */; };
 		7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */; };
 		7FD735EF2B9314FF00C1C537 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EE2B9314FF00C1C537 /* ContentView.swift */; };
-		7FD735F12B93150100C1C537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD735F02B93150100C1C537 /* Assets.xcassets */; };
+		7FD735F12B93150100C1C537 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD735F02B93150100C1C537 /* Images.xcassets */; };
 		7FD735F42B93150100C1C537 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD735F32B93150100C1C537 /* Preview Assets.xcassets */; };
 		7FD736092B99A68600C1C537 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD736082B99A68600C1C537 /* OpenAPIRuntime */; };
 		7FD7360C2B99A6A600C1C537 /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD7360B2B99A6A600C1C537 /* OpenAPIURLSession */; };
@@ -24,11 +27,14 @@
 /* Begin PBXFileReference section */
 		7F43539B2B9EF29C0042F02C /* ServerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTestView.swift; sourceTree = "<group>"; };
 		7F4353A12B9EFB170042F02C /* TestNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkService.swift; sourceTree = "<group>"; };
+		7FC9EAEA2BC5652800922431 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		7FC9EAEC2BC5653400922431 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		7FC9EAEF2BC5680C00922431 /* Font_ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font_ext..swift; sourceTree = "<group>"; };
 		7FC9F0602BA0601600C5C63D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		7FD735E92B9314FF00C1C537 /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScheduleApp.swift; sourceTree = "<group>"; };
 		7FD735EE2B9314FF00C1C537 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7FD735F02B93150100C1C537 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FD735F02B93150100C1C537 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7FD735F32B93150100C1C537 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7FD736122B99A8C300C1C537 /* openapi.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
 		7FD736142B99A92700C1C537 /* openapi-generator-config.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
@@ -58,6 +64,35 @@
 			path = "Tests API";
 			sourceTree = "<group>";
 		};
+		7FC9EAE82BC5640A00922431 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7F43539E2B9EFAE80042F02C /* Tests API */,
+				7FD736112B99A8A200C1C537 /* OpenAPI */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7FC9EAE92BC5642E00922431 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */,
+				7FD735EE2B9314FF00C1C537 /* ContentView.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		7FC9EAEE2BC567D900922431 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7FD735F02B93150100C1C537 /* Images.xcassets */,
+				7FC9EAEA2BC5652800922431 /* Colors.xcassets */,
+				7FC9EAEC2BC5653400922431 /* Icons.xcassets */,
+				7FC9EAEF2BC5680C00922431 /* Font_ext..swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7FD735E02B9314FF00C1C537 = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +112,9 @@
 		7FD735EB2B9314FF00C1C537 /* TravelSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				7FD736112B99A8A200C1C537 /* OpenAPI */,
-				7F43539E2B9EFAE80042F02C /* Tests API */,
-				7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */,
-				7FD735EE2B9314FF00C1C537 /* ContentView.swift */,
-				7FD735F02B93150100C1C537 /* Assets.xcassets */,
+				7FC9EAE82BC5640A00922431 /* Service */,
+				7FC9EAE92BC5642E00922431 /* Scene */,
+				7FC9EAEE2BC567D900922431 /* Helpers */,
 				7FD735F22B93150100C1C537 /* Preview Content */,
 			);
 			path = TravelSchedule;
@@ -173,9 +206,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC9EAEB2BC5652800922431 /* Colors.xcassets in Resources */,
 				7FD735F42B93150100C1C537 /* Preview Assets.xcassets in Resources */,
 				7FD736152B99A92700C1C537 /* openapi-generator-config.yaml in Resources */,
-				7FD735F12B93150100C1C537 /* Assets.xcassets in Resources */,
+				7FD735F12B93150100C1C537 /* Images.xcassets in Resources */,
+				7FC9EAED2BC5653400922431 /* Icons.xcassets in Resources */,
 				7FD736132B99A8C300C1C537 /* openapi.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +225,7 @@
 				7FD735EF2B9314FF00C1C537 /* ContentView.swift in Sources */,
 				7F43539C2B9EF29C0042F02C /* ServerTestView.swift in Sources */,
 				7FC9F0612BA0601600C5C63D /* ApiService.swift in Sources */,
+				7FC9EAF02BC5680C00922431 /* Font_ext..swift in Sources */,
 				7FD736172B99A9F100C1C537 /* OpenAPIService.swift in Sources */,
 				7F4353A22B9EFB170042F02C /* TestNetworkService.swift in Sources */,
 				7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */,
