@@ -20,6 +20,7 @@
 		7FC9EB0A2BC5B78E00922431 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB092BC5B78E00922431 /* ErrorView.swift */; };
 		7FC9EB0E2BC5BB2E00922431 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB0D2BC5BB2E00922431 /* ErrorType.swift */; };
 		7FC9EB112BC5BE2E00922431 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB102BC5BE2E00922431 /* SplashScreenView.swift */; };
+		7FC9EB142BC5BF7D00922431 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB132BC5BF7D00922431 /* ContactView.swift */; };
 		7FC9F0612BA0601600C5C63D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9F0602BA0601600C5C63D /* ApiService.swift */; };
 		7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */; };
 		7FD735EF2B9314FF00C1C537 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EE2B9314FF00C1C537 /* ContentView.swift */; };
@@ -46,6 +47,7 @@
 		7FC9EB092BC5B78E00922431 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		7FC9EB0D2BC5BB2E00922431 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		7FC9EB102BC5BE2E00922431 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		7FC9EB132BC5BF7D00922431 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		7FC9F0602BA0601600C5C63D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		7FD735E92B9314FF00C1C537 /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScheduleApp.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				7FC9EAFA2BC5B66600922431 /* CarrierInformationScreenView.swift */,
+				7FC9EB132BC5BF7D00922431 /* ContactView.swift */,
 			);
 			path = Carrier;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				7F4353A22B9EFB170042F02C /* TestNetworkService.swift in Sources */,
 				7FC9EAF82BC5981700922431 /* Strings+Generated.swift in Sources */,
 				7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */,
+				7FC9EB142BC5BF7D00922431 /* ContactView.swift in Sources */,
 				7FC9EAFE2BC5B68D00922431 /* CarriersScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
