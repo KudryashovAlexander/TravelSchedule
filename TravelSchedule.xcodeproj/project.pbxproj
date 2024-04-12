@@ -34,6 +34,9 @@
 		7FC9EB422BC8E39D00922431 /* ChoisenStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB412BC8E39D00922431 /* ChoisenStationViewModel.swift */; };
 		7FC9EB452BC8E53E00922431 /* ChoisenStationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB442BC8E53E00922431 /* ChoisenStationScreen.swift */; };
 		7FC9EB4C2BC8E76D00922431 /* SettingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB4B2BC8E76D00922431 /* SettingScreenView.swift */; };
+		7FC9EB4F2BC94FB200922431 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB4E2BC94FB200922431 /* DateFormatter.swift */; };
+		7FC9EB522BC957DF00922431 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EB542BC957DF00922431 /* Localizable.stringsdict */; };
+		7FC9EB572BC9644200922431 /* CariierUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB562BC9644200922431 /* CariierUIModel.swift */; };
 		7FC9F0612BA0601600C5C63D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9F0602BA0601600C5C63D /* ApiService.swift */; };
 		7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */; };
 		7FD735EF2B9314FF00C1C537 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EE2B9314FF00C1C537 /* ContentView.swift */; };
@@ -74,6 +77,9 @@
 		7FC9EB412BC8E39D00922431 /* ChoisenStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoisenStationViewModel.swift; sourceTree = "<group>"; };
 		7FC9EB442BC8E53E00922431 /* ChoisenStationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoisenStationScreen.swift; sourceTree = "<group>"; };
 		7FC9EB4B2BC8E76D00922431 /* SettingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenView.swift; sourceTree = "<group>"; };
+		7FC9EB4E2BC94FB200922431 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		7FC9EB532BC957DF00922431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		7FC9EB562BC9644200922431 /* CariierUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CariierUIModel.swift; sourceTree = "<group>"; };
 		7FC9F0602BA0601600C5C63D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		7FD735E92B9314FF00C1C537 /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScheduleApp.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 				7FC9EAF92BC5B63200922431 /* Carrier */,
 				7FC9EB472BC8E74D00922431 /* Setting */,
 				7FD735EE2B9314FF00C1C537 /* ContentView.swift */,
+				7FC9EB302BC84E0100922431 /* SubViews */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -141,8 +148,8 @@
 				7FD735F02B93150100C1C537 /* Images.xcassets */,
 				7FC9EAEA2BC5652800922431 /* Colors.xcassets */,
 				7FC9EAEC2BC5653400922431 /* Icons.xcassets */,
-				7FC9EAEF2BC5680C00922431 /* Font_ext..swift */,
 				7FC9EAF62BC5964000922431 /* Localizable.strings */,
+				7FC9EB542BC957DF00922431 /* Localizable.stringsdict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 		7FC9EAFC2BC5B67A00922431 /* Carriers */ = {
 			isa = PBXGroup;
 			children = (
+				7FC9EB552BC9643300922431 /* Model */,
 				7FC9EAFD2BC5B68D00922431 /* CarriersScreenView.swift */,
 				7FC9EB262BC8246A00922431 /* Subviews */,
 			);
@@ -238,6 +246,8 @@
 		7FC9EB202BC8048A00922431 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7FC9EAEF2BC5680C00922431 /* Font_ext..swift */,
+				7FC9EB4E2BC94FB200922431 /* DateFormatter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -276,6 +286,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		7FC9EB552BC9643300922431 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FC9EB562BC9644200922431 /* CariierUIModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7FD735E02B9314FF00C1C537 = {
 			isa = PBXGroup;
 			children = (
@@ -296,11 +314,10 @@
 			isa = PBXGroup;
 			children = (
 				7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */,
+				7FC9EAE92BC5642E00922431 /* Scene */,
+				7FC9EAEE2BC567D900922431 /* Resources */,
 				7FC9EAE82BC5640A00922431 /* Service */,
 				7FC9EB202BC8048A00922431 /* Helper */,
-				7FC9EAE92BC5642E00922431 /* Scene */,
-				7FC9EB302BC84E0100922431 /* SubViews */,
-				7FC9EAEE2BC567D900922431 /* Resources */,
 				7FD735F22B93150100C1C537 /* Preview Content */,
 			);
 			path = TravelSchedule;
@@ -397,6 +414,7 @@
 				7FD736152B99A92700C1C537 /* openapi-generator-config.yaml in Resources */,
 				7FC9EAF42BC5964000922431 /* Localizable.strings in Resources */,
 				7FD735F12B93150100C1C537 /* Images.xcassets in Resources */,
+				7FC9EB522BC957DF00922431 /* Localizable.stringsdict in Resources */,
 				7FC9EAED2BC5653400922431 /* Icons.xcassets in Resources */,
 				7FD736132B99A8C300C1C537 /* openapi.yaml in Resources */,
 			);
@@ -416,6 +434,7 @@
 				7FC9EB422BC8E39D00922431 /* ChoisenStationViewModel.swift in Sources */,
 				7FC9EB2B2BC8248400922431 /* CarrierView.swift in Sources */,
 				7FD735EF2B9314FF00C1C537 /* ContentView.swift in Sources */,
+				7FC9EB4F2BC94FB200922431 /* DateFormatter.swift in Sources */,
 				7FC9EB232BC8053200922431 /* DepTimeModel.swift in Sources */,
 				7FC9EB012BC5B6B700922431 /* FilterScreenView.swift in Sources */,
 				7F43539C2B9EF29C0042F02C /* ServerTestView.swift in Sources */,
@@ -431,6 +450,7 @@
 				7FC9EB4C2BC8E76D00922431 /* SettingScreenView.swift in Sources */,
 				7FC9EAF82BC5981700922431 /* Strings+Generated.swift in Sources */,
 				7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */,
+				7FC9EB572BC9644200922431 /* CariierUIModel.swift in Sources */,
 				7FC9EB172BC6481500922431 /* TransferView.swift in Sources */,
 				7FC9EB1A2BC64D1400922431 /* TimeFilterView.swift in Sources */,
 				7FC9EB3B2BC8DFF900922431 /* ChoiseCityScreen.swift in Sources */,
@@ -456,6 +476,14 @@
 				7FC9EAF52BC5964000922431 /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7FC9EB542BC957DF00922431 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FC9EB532BC957DF00922431 /* en */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
