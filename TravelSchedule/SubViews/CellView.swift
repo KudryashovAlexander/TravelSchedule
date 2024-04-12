@@ -18,7 +18,6 @@ struct CellView: View {
                 .frame(width: 24, height: 24)
         }
         .padding(.horizontal, 16)
-        .padding(.vertical,18)
         .foregroundColor(.tsBlackTopic)
         .background(.clear)
     }
@@ -26,4 +25,5 @@ struct CellView: View {
 
 #Preview {
     CellView(title: "Москва")
+        .background(Color.tsGray)
 }

@@ -18,6 +18,7 @@ struct ChoisenStationScreen: View {
                     LazyVStack(content: {
                         ForEach(viewModel.filterStations, id: \.self) { station in
                             CellView(title: station)
+                                .frame(height: 60)
                         }
                     })
                 }

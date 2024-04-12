@@ -19,6 +19,7 @@ struct ChoiseCityScreen: View {
                     LazyVStack(content: {
                         ForEach(viewModel.filterCities, id: \.self) { city in
                             CellView(title: city)
+                                .frame(height: 60)
                         }
                     })
                 }
