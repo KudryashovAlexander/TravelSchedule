@@ -17,6 +17,8 @@ public enum L {
     public static let email = L.tr("Localizable", "carriers.email", fallback: "Email")
     /// Информация о перевозчике
     public static let information = L.tr("Localizable", "carriers.information", fallback: "Информация о перевозчике")
+    /// Вариантов нет
+    public static let notFound = L.tr("Localizable", "carriers.notFound", fallback: "Вариантов нет")
     /// Телефон
     public static let phone = L.tr("Localizable", "carriers.phone", fallback: "Телефон")
   }

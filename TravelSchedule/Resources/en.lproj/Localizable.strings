@@ -19,6 +19,7 @@
 //Carriers
 "carriers.checkTime" = "Уточнить время";
 "carriers.information" = "Информация о перевозчике";
+"carriers.notFound" = "Вариантов нет";
 "carriers.email" = "Email";
 "carriers.phone" = "Телефон";
 

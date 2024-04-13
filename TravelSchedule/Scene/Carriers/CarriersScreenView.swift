@@ -25,12 +25,19 @@ struct CarriersScreenView: View {
                     .lineLimit(3)
                     .padding(.horizontal, 16)
                     .padding(.top, 16)
-                LazyVStack(spacing: 8, content: {
-                    ForEach(viewModel.filterCarriers.indices) { index in
-                        CarrierView(model: viewModel.filterCarriers[index])
-                            .padding(.horizontal, 16)
-                    }
-                })
+                if !viewModel.filterCarriers.isEmpty {
+                    LazyVStack(spacing: 8, content: {
+                        ForEach(viewModel.filterCarriers.indices) { index in
+                            CarrierView(model: viewModel.filterCarriers[index])
+                                .padding(.horizontal, 16)
+                        }
+                    })
+                } else {
+                    Text(L.Carriers.notFound)
+                        .font(.Bold.size24)
+                        .foregroundColor(.tsBlackTopic)
+                        .frame(maxHeight: .infinity)
+                }
                 
             }
             VStack {
