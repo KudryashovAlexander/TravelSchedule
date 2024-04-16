@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ChoisenStationScreen: View {
+    
     @ObservedObject var viewModel: ChoisenStationViewModel
+    @EnvironmentObject private var coordinator: Coordinator
     
     var body: some View {
         VStack {
@@ -17,7 +19,10 @@ struct ChoisenStationScreen: View {
                 ScrollView {
                     LazyVStack(content: {
                         ForEach(viewModel.filterStations, id: \.self) { station in
-                            CellView(title: station)
+                            CellView(title: station) {
+                                coordinator.addStopType(station)
+                                coordinator.popToRoot()
+                            }
                                 .frame(height: 60)
                         }
                     })
@@ -29,10 +34,12 @@ struct ChoisenStationScreen: View {
                     .frame(maxHeight: .infinity)
             }
         }
+        .modifyNavigation(title: L.CheckStation.station)
     }
 
 }
 
 #Preview {
-    ChoisenStationScreen(viewModel: .preview)
+    @StateObject var coordinator = Coordinator.preview
+    return ChoisenStationScreen(viewModel: .preview).environmentObject(coordinator)
 }

@@ -9,9 +9,6 @@ import Foundation
 
 final class CarriersViewModel: ObservableObject {
     
-    let departureStation: String = "Москва (Ярославский вокзал)"
-    let arriveStation: String = "Санкт-Петербург (Балтийский вокзал)"
-    
     private var carriers: [CarrierUIModel]
     
     var filterTime = Set<Int>()

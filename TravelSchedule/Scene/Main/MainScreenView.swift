@@ -9,21 +9,26 @@ import SwiftUI
 
 struct MainScreenView: View {
     
-    @State private var departure: String = ""
-    @State private var arrive: String = ""
+    @EnvironmentObject private var coordinator: Coordinator
     
     private var stateIsEmpty: Bool {
-        !departure.isEmpty && !arrive.isEmpty
+        !coordinator.departure.isEmpty && !coordinator.arrive.isEmpty
     }
     
     var body: some View {
         VStack(spacing: 20) {
             HistoriesView()
             VStack(spacing: 16) {
-                DepartureAndArrival(departure: $departure, arrive: $arrive)
-                
+                DepartureAndArrival(departure: $coordinator.departure,
+                                    arrive: $coordinator.arrive) {
+                    coordinator.currentStopType = .departure
+                    coordinator.push(.choiseCity)
+                } arriveCompletion: {
+                    coordinator.currentStopType = .arrive
+                    coordinator.push(.choiseCity)
+                }
                 Button(action: {
-                    
+                    coordinator.push(.carriers)
                 }, label: {
                     Text(L.Main.find)
                 })
@@ -40,5 +45,7 @@ struct MainScreenView: View {
 }
 
 #Preview {
-    MainScreenView()
+    @StateObject var coordinator = Coordinator.preview
+    return MainScreenView()
+            .environmentObject(coordinator)
 }

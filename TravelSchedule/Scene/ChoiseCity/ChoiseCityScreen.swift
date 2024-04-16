@@ -10,6 +10,7 @@ import SwiftUI
 struct ChoiseCityScreen: View {
     
     @ObservedObject var viewModel: ChoisenCityViewModel
+    @EnvironmentObject private var coordinator: Coordinator
     
     var body: some View {
         VStack {
@@ -18,7 +19,11 @@ struct ChoiseCityScreen: View {
                 ScrollView {
                     LazyVStack(content: {
                         ForEach(viewModel.filterCities, id: \.self) { city in
-                            CellView(title: city)
+                            CellView(title: city) {
+                                coordinator.clearCity()
+                                coordinator.addStopType(city)
+                                coordinator.push(.choiseStation)
+                            }
                                 .frame(height: 60)
                         }
                     })
@@ -30,9 +35,12 @@ struct ChoiseCityScreen: View {
                     .frame(maxHeight: .infinity)
             }
         }
+        .modifyNavigation(title: L.CheckCity.city)
     }
 }
 
 #Preview {
-    ChoiseCityScreen(viewModel: .preview)
+    @StateObject var coordinator = Coordinator.preview
+    return ChoiseCityScreen(viewModel: .preview)
+            .environmentObject(coordinator)
 }

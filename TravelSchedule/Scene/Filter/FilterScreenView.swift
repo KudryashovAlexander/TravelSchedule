@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FilterScreenView: View {
     
+    @EnvironmentObject private var coordinator: Coordinator
     @ObservedObject var viewModel: FilterViewModel
     
     var body: some View {
@@ -23,7 +24,7 @@ struct FilterScreenView: View {
                 }
                 if viewModel.filterIsChange {
                     Button(action: {
-                        //применить
+                        coordinator.pop()
                     }, label: {
                         Text(L.Filter.apply)
                             .foregroundColor(.tsWhite)
@@ -38,6 +39,7 @@ struct FilterScreenView: View {
                 }
             }
         }
+        .modifyNavigation(title: "")
     }
     
     private var depTimeView: some View {
@@ -88,5 +90,6 @@ struct FilterScreenView: View {
 }
 
 #Preview {
-    FilterScreenView(viewModel: FilterViewModel())
+    @StateObject var coordinator = Coordinator.preview
+    return FilterScreenView(viewModel: FilterViewModel()).environmentObject(coordinator)
 }

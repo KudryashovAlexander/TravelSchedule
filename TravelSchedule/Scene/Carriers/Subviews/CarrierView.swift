@@ -38,7 +38,7 @@ struct CarrierView: View {
             VStack {
                 Text(model.departureDay.dateToString_dd_MMMM())
                     .font(Font.Regular.size12)
-                    .foregroundColor(.tsBlackTopic)
+                    .foregroundColor(.tsBlack)
                 Spacer()
             }
         }
@@ -51,7 +51,7 @@ struct CarrierView: View {
                 Text(model.name)
                     .font(Font.Regular.size17)
                     .multilineTextAlignment(.leading)
-                    .foregroundColor(.tsBlackTopic)
+                    .foregroundColor(.tsBlack)
                 Spacer()
             }
             if let transfer = model.transer {
@@ -84,14 +84,14 @@ struct CarrierView: View {
     private var travelTime: some View {
         Text(countHoursString(model.travelTime))
             .font(Font.Regular.size12)
-            .foregroundColor(.tsBlackTopic)
+            .foregroundColor(.tsBlack)
     }
     
     @ViewBuilder
     private func basicTimeView(_ timeString: String) -> some View {
         Text(timeString)
             .font(Font.Regular.size17)
-            .foregroundColor(.tsBlackTopic)
+            .foregroundColor(.tsBlack)
     }
     
     private func countHoursString(_ number: Int) -> String {

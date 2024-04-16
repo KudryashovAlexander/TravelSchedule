@@ -9,12 +9,15 @@ import SwiftUI
 
 struct SettingScreenView: View {
     
-    @Binding var isOn: Bool
+    @State var isOn: Bool = false
+    @State var theColorScheme: ColorScheme = .light
     
     var body: some View {
         VStack {
             darkTheme
-            CellView(title: L.Settings.politycy)
+            CellView(title: L.Settings.politycy) {
+                
+            }
                 .frame(height: 60)
             Spacer()
             VStack(spacing: 16) {
@@ -40,13 +43,20 @@ struct SettingScreenView: View {
             Spacer()
             Toggle("", isOn: $isOn)
                 .tint(Color.blue)
+                .onChange(of: isOn) { _ in
+                    toggleColorScheme()
+                }
+                
         }
         .frame(height: 60)
         .padding(.horizontal, 16)
     }
+    
+    private func toggleColorScheme() {
+        theColorScheme = (theColorScheme == .dark) ? .light : .dark
+    }
 }
 
 #Preview {
-    @State var isOn = true
-    return SettingScreenView(isOn: $isOn)
+    SettingScreenView()
 }

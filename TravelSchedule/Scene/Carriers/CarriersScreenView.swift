@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CarriersScreenView: View {
     
+    @EnvironmentObject private var coordinator: Coordinator
+    
     let viewModel: CarriersViewModel
     
     init(viewModel: CarriersViewModel) {
@@ -19,7 +21,7 @@ struct CarriersScreenView: View {
         ZStack {
             Color.tsWhiteTopic.ignoresSafeArea()
             ScrollView {
-                Text(viewModel.departureStation + " → " + viewModel.arriveStation)
+                Text(coordinator.departure + " → " + coordinator.arrive)
                     .font(.Bold.size24)
                     .foregroundColor(.tsBlackTopic)
                     .lineLimit(3)
@@ -30,6 +32,10 @@ struct CarriersScreenView: View {
                         ForEach(viewModel.filterCarriers.indices) { index in
                             CarrierView(model: viewModel.filterCarriers[index])
                                 .padding(.horizontal, 16)
+                                .padding(.bottom, index == (viewModel.filterCarriers.count - 1) ? 126 : 0)
+                                .onTapGesture {
+                                    coordinator.push(.carrier(viewModel.filterCarriers[index]))
+                                }
                         }
                     })
                 } else {
@@ -43,7 +49,7 @@ struct CarriersScreenView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    //применить
+                    coordinator.push(.filter)
                 }, label: {
                     HStack(alignment: .center ,spacing: 4) {
                         Text(L.Carriers.checkTime)
@@ -65,9 +71,11 @@ struct CarriersScreenView: View {
             }
             
         }
+        .modifyNavigation(title: "")
     }
 }
 
 #Preview {
-    CarriersScreenView(viewModel: CarriersViewModel.prewiew)
+    @StateObject var coordinator = Coordinator.preview
+    return CarriersScreenView(viewModel: CarriersViewModel.prewiew).environmentObject(coordinator)
 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct CarrierUIModel {
+struct CarrierUIModel: Identifiable, Equatable, Hashable {
+    let id = UUID()
     let name: String
     let transer: String?
     let image: ImageResource

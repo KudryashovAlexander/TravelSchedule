@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CarrierInformationScreenView: View {
     
+    @EnvironmentObject private var coordinator: Coordinator
+    
     let logo: ImageResource
     let carrierName: String
     let email: String
@@ -27,10 +29,10 @@ struct CarrierInformationScreenView: View {
             VStack(alignment:.center, spacing: 16) {
                 ZStack {
                     Rectangle()
-                        .background(Color.tsWhite)
+                        .foregroundColor(Color.tsWhite)
                     Image(logo)
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fit)
                         .frame(height: .infinity)
                 }
                 .frame(height: 104)
@@ -51,12 +53,14 @@ struct CarrierInformationScreenView: View {
             .padding(.top, 16)
             .padding(.horizontal, 16)
         }
+        .modifyNavigation(title: L.Carriers.information)
     }
 }
 
 #Preview {
-    CarrierInformationScreenView(logo: .carrier1,
+    @StateObject var coordinator = Coordinator.preview
+    return CarrierInformationScreenView(logo: .carrier1,
                                  carrierName: "ОАО «РЖД»",
                                  email: "i.lozgkina@yandex.ru",
-                                 phone: "+7 (904) 329-27-71")
+                                 phone: "+7 (904) 329-27-71").environmentObject(coordinator)
 }

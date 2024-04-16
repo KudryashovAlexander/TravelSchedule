@@ -7,7 +7,11 @@
 
 import Foundation
 
-enum ErrorType {
+enum ErrorType: String, Identifiable {
     case network
     case server
+    
+    var id: String {
+        "error" + self.rawValue
+    }
 }
