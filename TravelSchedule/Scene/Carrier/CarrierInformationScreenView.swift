@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CarrierInformationScreenView: View {
     
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var coordinator: MainCoordinator
     
     let logo: ImageResource
     let carrierName: String
@@ -53,12 +53,14 @@ struct CarrierInformationScreenView: View {
             .padding(.top, 16)
             .padding(.horizontal, 16)
         }
-        .modifyNavigation(title: L.Carriers.information)
+        .modifyNavigation(title: L.Carriers.information){
+            coordinator.pop()
+        }
     }
 }
 
 #Preview {
-    @StateObject var coordinator = Coordinator.preview
+    @StateObject var coordinator = MainCoordinator.preview
     return CarrierInformationScreenView(logo: .carrier1,
                                  carrierName: "ОАО «РЖД»",
                                  email: "i.lozgkina@yandex.ru",

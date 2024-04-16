@@ -10,12 +10,12 @@ import SwiftUI
 struct TabViewScreen: View {
     var body: some View {
         TabView {
-            CoordinatorView()
+            MainCoordinatorView()
                 .tabItem {
                     Label("", image: "mainTabBarItem")
                 }
             
-            SettingScreenView()
+            SettingCoordinatorView()
                 .tabItem {
                     Label("", image: "settingTabBarItem")
                 }

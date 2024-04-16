@@ -11,8 +11,13 @@ import SwiftUI
 
 struct NavigationTitleModify: ViewModifier {
     
-    @EnvironmentObject private var coordinator: Coordinator
     var title: String
+    var backAction: () -> Void
+    
+    init(title: String, backAction: @escaping () -> Void) {
+        self.title = title
+        self.backAction = backAction
+    }
     
     func body(content: Content) -> some View {
         content
@@ -23,7 +28,7 @@ struct NavigationTitleModify: ViewModifier {
                 ToolbarItem(placement: .navigation) {
                     Image(.chevronLeft)
                         .onTapGesture {
-                            coordinator.pop()
+                            backAction()
                         }
                 }
             }
@@ -32,7 +37,9 @@ struct NavigationTitleModify: ViewModifier {
 }
 
 extension View {
-    func modifyNavigation(title: String) -> some View {
-        self.modifier(NavigationTitleModify(title: title))
+    func modifyNavigation(title: String, completion: @escaping () -> Void) -> some View { 
+        self.modifier(NavigationTitleModify(title: title, backAction: {
+            completion()
+        }))
     }
 }

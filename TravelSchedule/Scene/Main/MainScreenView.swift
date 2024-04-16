@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainScreenView: View {
     
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var coordinator: MainCoordinator
     
     private var stateIsEmpty: Bool {
         !coordinator.departure.isEmpty && !coordinator.arrive.isEmpty
@@ -45,7 +45,7 @@ struct MainScreenView: View {
 }
 
 #Preview {
-    @StateObject var coordinator = Coordinator.preview
+    @StateObject var coordinator = MainCoordinator.preview
     return MainScreenView()
             .environmentObject(coordinator)
 }

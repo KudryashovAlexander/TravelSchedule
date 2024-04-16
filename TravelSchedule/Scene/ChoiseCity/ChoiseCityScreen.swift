@@ -10,7 +10,7 @@ import SwiftUI
 struct ChoiseCityScreen: View {
     
     @ObservedObject var viewModel: ChoisenCityViewModel
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var coordinator: MainCoordinator
     
     var body: some View {
         VStack {
@@ -35,12 +35,14 @@ struct ChoiseCityScreen: View {
                     .frame(maxHeight: .infinity)
             }
         }
-        .modifyNavigation(title: L.CheckCity.city)
+        .modifyNavigation(title: L.CheckCity.city) {
+            coordinator.pop()
+        }
     }
 }
 
 #Preview {
-    @StateObject var coordinator = Coordinator.preview
+    @StateObject var coordinator = MainCoordinator.preview
     return ChoiseCityScreen(viewModel: .preview)
             .environmentObject(coordinator)
 }

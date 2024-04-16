@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-final class Coordinator: ObservableObject {
+final class MainCoordinator: ObservableObject, CoordinatorProtocol {
     
     @Published var path = NavigationPath()
     
     var departure: String = ""
     var arrive: String = ""
-    
     var currentStopType = StopType.departure
         
     func push(_ page: Page) {
@@ -43,8 +42,6 @@ final class Coordinator: ObservableObject {
             carriersScreen()
         case .carrier(let model):
             carrierScreen(model: model)
-        case .setting:
-            settingScreen()
         case .error(let errorType):
             errorScreen(errorType: errorType)
         }
@@ -113,16 +110,11 @@ final class Coordinator: ObservableObject {
     }
     
     @ViewBuilder
-    private func settingScreen() -> some View {
-        SettingScreenView()
-    }
-    
-    @ViewBuilder
     private func errorScreen(errorType: ErrorType) -> some View {
         ErrorView(errorType: errorType)
     }
     
-    static let preview = Coordinator()
+    static let preview = MainCoordinator()
     
 }
 
@@ -133,7 +125,6 @@ enum Page: Identifiable, Hashable {
     case filter
     case carriers
     case carrier(CarrierUIModel)
-    case setting
     case error(ErrorType)
     var id: String {
         switch self {
@@ -149,8 +140,6 @@ enum Page: Identifiable, Hashable {
             "carriers"
         case .carrier(let model):
             "carrier" + model.id.uuidString
-        case .setting:
-            "setting"
         case .error(let errorType):
             errorType.rawValue
         }

@@ -9,9 +9,15 @@
 /* Begin PBXBuildFile section */
 		7F43539C2B9EF29C0042F02C /* ServerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43539B2B9EF29C0042F02C /* ServerTestView.swift */; };
 		7F4353A22B9EFB170042F02C /* TestNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4353A12B9EFB170042F02C /* TestNetworkService.swift */; };
-		7F522EAA2BCE467800FB8CB7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EA92BCE467800FB8CB7 /* Coordinator.swift */; };
+		7F522EAA2BCE467800FB8CB7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EA92BCE467800FB8CB7 /* MainCoordinator.swift */; };
 		7F522EAF2BCE712900FB8CB7 /* TabViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EAE2BCE712900FB8CB7 /* TabViewScreen.swift */; };
 		7F522EB62BCE920400FB8CB7 /* NavigationTittleModify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EB52BCE920400FB8CB7 /* NavigationTittleModify.swift */; };
+		7F522EBB2BCED12800FB8CB7 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EBA2BCED12800FB8CB7 /* WebViewScreen.swift */; };
+		7F522EBE2BCED21700FB8CB7 /* SwiftUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EBD2BCED21700FB8CB7 /* SwiftUIWebView.swift */; };
+		7F522EC22BCED6D600FB8CB7 /* WebViewURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EC12BCED6D600FB8CB7 /* WebViewURLs.swift */; };
+		7F522EC62BCED9F700FB8CB7 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EC52BCED9F700FB8CB7 /* SettingCoordinator.swift */; };
+		7F522EC92BCEDADA00FB8CB7 /* SettingCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EC82BCEDADA00FB8CB7 /* SettingCoordinatorView.swift */; };
+		7F522ECB2BCEDFEC00FB8CB7 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522ECA2BCEDFEC00FB8CB7 /* CoordinatorProtocol.swift */; };
 		7FC9EAEB2BC5652800922431 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEA2BC5652800922431 /* Colors.xcassets */; };
 		7FC9EAED2BC5653400922431 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEC2BC5653400922431 /* Icons.xcassets */; };
 		7FC9EAF02BC5680C00922431 /* Font_ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEF2BC5680C00922431 /* Font_ext..swift */; };
@@ -47,7 +53,7 @@
 		7FC9EB6C2BCD68AD00922431 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB6B2BCD68AD00922431 /* HistoryModel.swift */; };
 		7FC9F0612BA0601600C5C63D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9F0602BA0601600C5C63D /* ApiService.swift */; };
 		7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */; };
-		7FD735EF2B9314FF00C1C537 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EE2B9314FF00C1C537 /* CoordinatorView.swift */; };
+		7FD735EF2B9314FF00C1C537 /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EE2B9314FF00C1C537 /* MainCoordinatorView.swift */; };
 		7FD735F12B93150100C1C537 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD735F02B93150100C1C537 /* Images.xcassets */; };
 		7FD735F42B93150100C1C537 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD735F32B93150100C1C537 /* Preview Assets.xcassets */; };
 		7FD736092B99A68600C1C537 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD736082B99A68600C1C537 /* OpenAPIRuntime */; };
@@ -60,9 +66,15 @@
 /* Begin PBXFileReference section */
 		7F43539B2B9EF29C0042F02C /* ServerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTestView.swift; sourceTree = "<group>"; };
 		7F4353A12B9EFB170042F02C /* TestNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkService.swift; sourceTree = "<group>"; };
-		7F522EA92BCE467800FB8CB7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7F522EA92BCE467800FB8CB7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7F522EAE2BCE712900FB8CB7 /* TabViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewScreen.swift; sourceTree = "<group>"; };
 		7F522EB52BCE920400FB8CB7 /* NavigationTittleModify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTittleModify.swift; sourceTree = "<group>"; };
+		7F522EBA2BCED12800FB8CB7 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
+		7F522EBD2BCED21700FB8CB7 /* SwiftUIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWebView.swift; sourceTree = "<group>"; };
+		7F522EC12BCED6D600FB8CB7 /* WebViewURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewURLs.swift; sourceTree = "<group>"; };
+		7F522EC52BCED9F700FB8CB7 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
+		7F522EC82BCEDADA00FB8CB7 /* SettingCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinatorView.swift; sourceTree = "<group>"; };
+		7F522ECA2BCEDFEC00FB8CB7 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		7FC9EAEA2BC5652800922431 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7FC9EAEC2BC5653400922431 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		7FC9EAEF2BC5680C00922431 /* Font_ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font_ext..swift; sourceTree = "<group>"; };
@@ -99,7 +111,7 @@
 		7FC9F0602BA0601600C5C63D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		7FD735E92B9314FF00C1C537 /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScheduleApp.swift; sourceTree = "<group>"; };
-		7FD735EE2B9314FF00C1C537 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		7FD735EE2B9314FF00C1C537 /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
 		7FD735F02B93150100C1C537 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7FD735F32B93150100C1C537 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7FD736122B99A8C300C1C537 /* openapi.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
@@ -130,9 +142,37 @@
 			path = "Tests API";
 			sourceTree = "<group>";
 		};
+		7F522EB92BCED10C00FB8CB7 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7F522EBA2BCED12800FB8CB7 /* WebViewScreen.swift */,
+				7F522EBD2BCED21700FB8CB7 /* SwiftUIWebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		7F522EBF2BCED63600FB8CB7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7F522EC12BCED6D600FB8CB7 /* WebViewURLs.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7F522EC72BCEDA0E00FB8CB7 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				7F522EA92BCE467800FB8CB7 /* MainCoordinator.swift */,
+				7F522EC52BCED9F700FB8CB7 /* SettingCoordinator.swift */,
+				7F522ECA2BCEDFEC00FB8CB7 /* CoordinatorProtocol.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		7FC9EAE82BC5640A00922431 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7F522EBF2BCED63600FB8CB7 /* Network */,
 				7F43539E2B9EFAE80042F02C /* Tests API */,
 				7FD736112B99A8A200C1C537 /* OpenAPI */,
 			);
@@ -142,6 +182,9 @@
 		7FC9EAE92BC5642E00922431 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7FD735EE2B9314FF00C1C537 /* MainCoordinatorView.swift */,
+				7F522EC82BCEDADA00FB8CB7 /* SettingCoordinatorView.swift */,
+				7F522EB92BCED10C00FB8CB7 /* WebView */,
 				7FC9EB042BC5B71200922431 /* Splash */,
 				7FC9EB052BC5B72300922431 /* Main */,
 				7FC9EB022BC5B6DF00922431 /* ChoiseCity */,
@@ -352,8 +395,7 @@
 			children = (
 				7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */,
 				7F522EAE2BCE712900FB8CB7 /* TabViewScreen.swift */,
-				7F522EA92BCE467800FB8CB7 /* Coordinator.swift */,
-				7FD735EE2B9314FF00C1C537 /* CoordinatorView.swift */,
+				7F522EC72BCEDA0E00FB8CB7 /* Coordinators */,
 				7FC9EAE92BC5642E00922431 /* Scene */,
 				7FC9EAEE2BC567D900922431 /* Resources */,
 				7FC9EAE82BC5640A00922431 /* Service */,
@@ -470,14 +512,17 @@
 				7FC9EB352BC84E5200922431 /* CellView.swift in Sources */,
 				7FC9EB452BC8E53E00922431 /* ChoisenStationScreen.swift in Sources */,
 				7FC9EB0A2BC5B78E00922431 /* ErrorView.swift in Sources */,
+				7F522EBE2BCED21700FB8CB7 /* SwiftUIWebView.swift in Sources */,
 				7FC9EB0E2BC5BB2E00922431 /* ErrorType.swift in Sources */,
 				7FC9EB5C2BCA3EA600922431 /* DepartureAndArrival.swift in Sources */,
+				7F522ECB2BCEDFEC00FB8CB7 /* CoordinatorProtocol.swift in Sources */,
 				7FC9EB622BCD67A600922431 /* HistoriesView.swift in Sources */,
+				7F522EBB2BCED12800FB8CB7 /* WebViewScreen.swift in Sources */,
 				7FC9EB422BC8E39D00922431 /* ChoisenStationViewModel.swift in Sources */,
 				7FC9EB2B2BC8248400922431 /* CarrierView.swift in Sources */,
-				7F522EAA2BCE467800FB8CB7 /* Coordinator.swift in Sources */,
+				7F522EAA2BCE467800FB8CB7 /* MainCoordinator.swift in Sources */,
 				7FC9EB5F2BCD677E00922431 /* MainScreenView.swift in Sources */,
-				7FD735EF2B9314FF00C1C537 /* CoordinatorView.swift in Sources */,
+				7FD735EF2B9314FF00C1C537 /* MainCoordinatorView.swift in Sources */,
 				7FC9EB4F2BC94FB200922431 /* DateFormatter.swift in Sources */,
 				7FC9EB232BC8053200922431 /* DepTimeModel.swift in Sources */,
 				7FC9EB012BC5B6B700922431 /* FilterScreenView.swift in Sources */,
@@ -496,12 +541,15 @@
 				7FC9EAF82BC5981700922431 /* Strings+Generated.swift in Sources */,
 				7FC9EB6C2BCD68AD00922431 /* HistoryModel.swift in Sources */,
 				7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */,
+				7F522EC62BCED9F700FB8CB7 /* SettingCoordinator.swift in Sources */,
 				7FC9EB572BC9644200922431 /* CariierUIModel.swift in Sources */,
+				7F522EC92BCEDADA00FB8CB7 /* SettingCoordinatorView.swift in Sources */,
 				7F522EAF2BCE712900FB8CB7 /* TabViewScreen.swift in Sources */,
 				7F522EB62BCE920400FB8CB7 /* NavigationTittleModify.swift in Sources */,
 				7FC9EB172BC6481500922431 /* TransferView.swift in Sources */,
 				7FC9EB1A2BC64D1400922431 /* TimeFilterView.swift in Sources */,
 				7FC9EB3B2BC8DFF900922431 /* ChoiseCityScreen.swift in Sources */,
+				7F522EC22BCED6D600FB8CB7 /* WebViewURLs.swift in Sources */,
 				7FC9EB3E2BC8E0A600922431 /* ChoisenCityViewModel.swift in Sources */,
 				7FC9EB142BC5BF7D00922431 /* ContactView.swift in Sources */,
 				7FC9EAFE2BC5B68D00922431 /* CarriersScreenView.swift in Sources */,

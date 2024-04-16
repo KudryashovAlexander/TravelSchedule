@@ -10,13 +10,13 @@ import SwiftUI
 struct SettingScreenView: View {
     
     @State var isOn: Bool = false
-    @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject private var coordinator: SettingCoordinator
     
     var body: some View {
         VStack {
             darkTheme
             CellView(title: L.Settings.politycy) {
-                
+                coordinator.push(.webView(WebViewURLs.politicy))
             }
                 .frame(height: 60)
             Spacer()
@@ -53,5 +53,6 @@ struct SettingScreenView: View {
 }
 
 #Preview {
-    SettingScreenView()
+    @StateObject var coordinator = SettingCoordinator.preview
+    return SettingScreenView().environmentObject(coordinator)
 }

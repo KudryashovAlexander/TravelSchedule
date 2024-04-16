@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CarriersScreenView: View {
     
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var coordinator: MainCoordinator
     
     let viewModel: CarriersViewModel
     
@@ -71,11 +71,13 @@ struct CarriersScreenView: View {
             }
             
         }
-        .modifyNavigation(title: "")
+        .modifyNavigation(title: ""){
+            coordinator.pop()
+        }
     }
 }
 
 #Preview {
-    @StateObject var coordinator = Coordinator.preview
+    @StateObject var coordinator = MainCoordinator.preview
     return CarriersScreenView(viewModel: CarriersViewModel.prewiew).environmentObject(coordinator)
 }
