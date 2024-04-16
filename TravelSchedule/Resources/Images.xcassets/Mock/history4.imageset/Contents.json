@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "changeCities.png",
+      "filename" : "history4.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "changeCities@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "changeCities@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

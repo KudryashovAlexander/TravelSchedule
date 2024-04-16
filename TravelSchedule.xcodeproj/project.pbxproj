@@ -38,6 +38,10 @@
 		7FC9EB522BC957DF00922431 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EB542BC957DF00922431 /* Localizable.stringsdict */; };
 		7FC9EB572BC9644200922431 /* CariierUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB562BC9644200922431 /* CariierUIModel.swift */; };
 		7FC9EB5A2BCA1FED00922431 /* CarriersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB592BCA1FED00922431 /* CarriersViewModel.swift */; };
+		7FC9EB5C2BCA3EA600922431 /* DepartureAndArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB5B2BCA3EA600922431 /* DepartureAndArrival.swift */; };
+		7FC9EB5F2BCD677E00922431 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB5E2BCD677E00922431 /* MainScreenView.swift */; };
+		7FC9EB622BCD67A600922431 /* HistoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB612BCD67A600922431 /* HistoriesView.swift */; };
+		7FC9EB6C2BCD68AD00922431 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB6B2BCD68AD00922431 /* HistoryModel.swift */; };
 		7FC9F0612BA0601600C5C63D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9F0602BA0601600C5C63D /* ApiService.swift */; };
 		7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */; };
 		7FD735EF2B9314FF00C1C537 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EE2B9314FF00C1C537 /* ContentView.swift */; };
@@ -82,6 +86,10 @@
 		7FC9EB532BC957DF00922431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		7FC9EB562BC9644200922431 /* CariierUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CariierUIModel.swift; sourceTree = "<group>"; };
 		7FC9EB592BCA1FED00922431 /* CarriersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarriersViewModel.swift; sourceTree = "<group>"; };
+		7FC9EB5B2BCA3EA600922431 /* DepartureAndArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureAndArrival.swift; sourceTree = "<group>"; };
+		7FC9EB5E2BCD677E00922431 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		7FC9EB612BCD67A600922431 /* HistoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoriesView.swift; sourceTree = "<group>"; };
+		7FC9EB6B2BCD68AD00922431 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		7FC9F0602BA0601600C5C63D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		7FD735E92B9314FF00C1C537 /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScheduleApp.swift; sourceTree = "<group>"; };
@@ -224,6 +232,9 @@
 		7FC9EB052BC5B72300922431 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7FC9EB692BCD689C00922431 /* Model */,
+				7FC9EB5E2BCD677E00922431 /* MainScreenView.swift */,
+				7FC9EB642BCD685B00922431 /* SubViews */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -293,6 +304,23 @@
 			isa = PBXGroup;
 			children = (
 				7FC9EB562BC9644200922431 /* CariierUIModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FC9EB642BCD685B00922431 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				7FC9EB5B2BCA3EA600922431 /* DepartureAndArrival.swift */,
+				7FC9EB612BCD67A600922431 /* HistoriesView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		7FC9EB692BCD689C00922431 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FC9EB6B2BCD68AD00922431 /* HistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,8 +462,11 @@
 				7FC9EB452BC8E53E00922431 /* ChoisenStationScreen.swift in Sources */,
 				7FC9EB0A2BC5B78E00922431 /* ErrorView.swift in Sources */,
 				7FC9EB0E2BC5BB2E00922431 /* ErrorType.swift in Sources */,
+				7FC9EB5C2BCA3EA600922431 /* DepartureAndArrival.swift in Sources */,
+				7FC9EB622BCD67A600922431 /* HistoriesView.swift in Sources */,
 				7FC9EB422BC8E39D00922431 /* ChoisenStationViewModel.swift in Sources */,
 				7FC9EB2B2BC8248400922431 /* CarrierView.swift in Sources */,
+				7FC9EB5F2BCD677E00922431 /* MainScreenView.swift in Sources */,
 				7FD735EF2B9314FF00C1C537 /* ContentView.swift in Sources */,
 				7FC9EB4F2BC94FB200922431 /* DateFormatter.swift in Sources */,
 				7FC9EB232BC8053200922431 /* DepTimeModel.swift in Sources */,
@@ -453,6 +484,7 @@
 				7FC9EB382BC84FA300922431 /* SearchBar.swift in Sources */,
 				7FC9EB4C2BC8E76D00922431 /* SettingScreenView.swift in Sources */,
 				7FC9EAF82BC5981700922431 /* Strings+Generated.swift in Sources */,
+				7FC9EB6C2BCD68AD00922431 /* HistoryModel.swift in Sources */,
 				7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */,
 				7FC9EB572BC9644200922431 /* CariierUIModel.swift in Sources */,
 				7FC9EB172BC6481500922431 /* TransferView.swift in Sources */,
