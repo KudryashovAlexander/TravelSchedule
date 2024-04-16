@@ -28,7 +28,6 @@ struct NavigationTitleModify: ViewModifier {
                 }
             }
             .toolbar(.hidden, for: .tabBar)
-
     }
 }
 
