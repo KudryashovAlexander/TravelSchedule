@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct SplashScreenView: View {
+    
+    @State private var isPresented = false
+    
     var body: some View {
         Image(.launchScreen)
             .resizable()
-            .ignoresSafeArea()
             .scaledToFill()
+            .ignoresSafeArea()
+            .onAppear {
+                isPresented = true
+            }
+            .fullScreenCover(isPresented: $isPresented, content: {
+                TabViewScreen()
+            })
     }
 }
 

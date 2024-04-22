@@ -11,9 +11,15 @@ final class MainCoordinator: ObservableObject, CoordinatorProtocol {
     
     @Published var path = NavigationPath()
     
-    var departure: String = ""
-    var arrive: String = ""
-    var currentStopType = StopType.departure
+    var departure: String
+    var arrive: String
+    var currentStopType: StopType
+    
+    init(departure: String = "", arrive: String = "", currentStopType: StopType = StopType.departure) {
+        self.departure = departure
+        self.arrive = arrive
+        self.currentStopType = currentStopType
+    }
         
     func push(_ page: Page) {
         path.append(page)
@@ -114,7 +120,9 @@ final class MainCoordinator: ObservableObject, CoordinatorProtocol {
         ErrorView(errorType: errorType)
     }
     
-    static let preview = MainCoordinator()
+    static let preview = MainCoordinator(departure: "Москва (Ярославский вокзал)",
+                                         arrive: "Санкт-Петербург (Балтийский вокзал)",
+                                         currentStopType: .departure)
     
 }
 

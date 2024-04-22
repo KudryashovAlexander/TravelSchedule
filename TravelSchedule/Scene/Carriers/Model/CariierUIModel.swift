@@ -95,5 +95,6 @@ struct CarrierUIModel: Identifiable, Equatable, Hashable {
                                                            travelTime: 20),
     ]
     
+    static let examplesEmpty:[CarrierUIModel] = []
     
 }

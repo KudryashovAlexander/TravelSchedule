@@ -20,31 +20,34 @@ struct CarriersScreenView: View {
     var body: some View {
         ZStack {
             Color.tsWhiteTopic.ignoresSafeArea()
-            ScrollView {
+            VStack {
                 Text(coordinator.departure + " → " + coordinator.arrive)
                     .font(.Bold.size24)
                     .foregroundColor(.tsBlackTopic)
                     .lineLimit(3)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 16)
+                    .padding(.all, 16)
                 if !viewModel.filterCarriers.isEmpty {
-                    LazyVStack(spacing: 8, content: {
-                        ForEach(viewModel.filterCarriers.indices) { index in
-                            CarrierView(model: viewModel.filterCarriers[index])
-                                .padding(.horizontal, 16)
-                                .padding(.bottom, index == (viewModel.filterCarriers.count - 1) ? 126 : 0)
-                                .onTapGesture {
-                                    coordinator.push(.carrier(viewModel.filterCarriers[index]))
-                                }
-                        }
-                    })
+                    ScrollView {
+                        LazyVStack(spacing: 8, content: {
+                            ForEach(viewModel.filterCarriers.indices, id:\.self) { index in
+                                CarrierView(model: viewModel.filterCarriers[index])
+                                    .padding(.horizontal, 16)
+                                    .padding(.bottom, index == (viewModel.filterCarriers.count - 1) ? 126 : 0)
+                                    .onTapGesture {
+                                        coordinator.push(.carrier(viewModel.filterCarriers[index]))
+                                    }
+                            }
+                        })
+                    }
                 } else {
-                    Text(L.Carriers.notFound)
-                        .font(.Bold.size24)
-                        .foregroundColor(.tsBlackTopic)
-                        .frame(maxHeight: .infinity)
+                    VStack {
+                        Text(L.Carriers.notFound)
+                            .font(.Bold.size24)
+                            .foregroundColor(.tsBlackTopic)
+                            .frame(maxHeight: .infinity)
+                    }
+                    .padding(.bottom, 84)
                 }
-                
             }
             VStack {
                 Spacer()
@@ -69,7 +72,6 @@ struct CarriersScreenView: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 24)
             }
-            
         }
         .modifyNavigation(title: ""){
             coordinator.pop()
@@ -77,7 +79,12 @@ struct CarriersScreenView: View {
     }
 }
 
-#Preview {
+#Preview("Data") {
     @StateObject var coordinator = MainCoordinator.preview
     return CarriersScreenView(viewModel: CarriersViewModel.prewiew).environmentObject(coordinator)
+}
+
+#Preview("EmptyData") {
+    @StateObject var coordinator = MainCoordinator.preview
+    return CarriersScreenView(viewModel: CarriersViewModel.prewiewEmpty).environmentObject(coordinator)
 }

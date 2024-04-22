@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4266402BD664CE00B2CAB2 /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F42663F2BD664CE00B2CAB2 /* ErrorInfo.swift */; };
+		7F4266432BD6706500B2CAB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4266422BD6706500B2CAB2 /* LaunchScreen.storyboard */; };
 		7F43539C2B9EF29C0042F02C /* ServerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43539B2B9EF29C0042F02C /* ServerTestView.swift */; };
 		7F4353A22B9EFB170042F02C /* TestNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4353A12B9EFB170042F02C /* TestNetworkService.swift */; };
 		7F522EAA2BCE467800FB8CB7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F522EA92BCE467800FB8CB7 /* MainCoordinator.swift */; };
@@ -64,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F42663F2BD664CE00B2CAB2 /* ErrorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
+		7F4266422BD6706500B2CAB2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F43539B2B9EF29C0042F02C /* ServerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTestView.swift; sourceTree = "<group>"; };
 		7F4353A12B9EFB170042F02C /* TestNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkService.swift; sourceTree = "<group>"; };
 		7F522EA92BCE467800FB8CB7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -182,18 +186,19 @@
 		7FC9EAE92BC5642E00922431 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7F522EAE2BCE712900FB8CB7 /* TabViewScreen.swift */,
 				7FD735EE2B9314FF00C1C537 /* MainCoordinatorView.swift */,
 				7F522EC82BCEDADA00FB8CB7 /* SettingCoordinatorView.swift */,
-				7F522EB92BCED10C00FB8CB7 /* WebView */,
 				7FC9EB042BC5B71200922431 /* Splash */,
 				7FC9EB052BC5B72300922431 /* Main */,
 				7FC9EB022BC5B6DF00922431 /* ChoiseCity */,
 				7FC9EB032BC5B6EE00922431 /* ChoiseStation */,
 				7FC9EAFF2BC5B69500922431 /* Filter */,
 				7FC9EAFC2BC5B67A00922431 /* Carriers */,
-				7FC9EB062BC5B75100922431 /* Error */,
 				7FC9EAF92BC5B63200922431 /* Carrier */,
 				7FC9EB472BC8E74D00922431 /* Setting */,
+				7FC9EB062BC5B75100922431 /* Error */,
+				7F522EB92BCED10C00FB8CB7 /* WebView */,
 				7FC9EB302BC84E0100922431 /* SubViews */,
 			);
 			path = Scene;
@@ -292,6 +297,7 @@
 			children = (
 				7FC9EB092BC5B78E00922431 /* ErrorView.swift */,
 				7FC9EB0D2BC5BB2E00922431 /* ErrorType.swift */,
+				7F42663F2BD664CE00B2CAB2 /* ErrorInfo.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -394,13 +400,13 @@
 			isa = PBXGroup;
 			children = (
 				7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */,
-				7F522EAE2BCE712900FB8CB7 /* TabViewScreen.swift */,
 				7F522EC72BCEDA0E00FB8CB7 /* Coordinators */,
 				7FC9EAE92BC5642E00922431 /* Scene */,
 				7FC9EAEE2BC567D900922431 /* Resources */,
 				7FC9EAE82BC5640A00922431 /* Service */,
 				7FC9EB202BC8048A00922431 /* Helper */,
 				7FD735F22B93150100C1C537 /* Preview Content */,
+				7F4266422BD6706500B2CAB2 /* LaunchScreen.storyboard */,
 			);
 			path = TravelSchedule;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4266432BD6706500B2CAB2 /* LaunchScreen.storyboard in Resources */,
 				7FC9EAEB2BC5652800922431 /* Colors.xcassets in Resources */,
 				7FD735F42B93150100C1C537 /* Preview Assets.xcassets in Resources */,
 				7FD736152B99A92700C1C537 /* openapi-generator-config.yaml in Resources */,
@@ -540,6 +547,7 @@
 				7FC9EB4C2BC8E76D00922431 /* SettingScreenView.swift in Sources */,
 				7FC9EAF82BC5981700922431 /* Strings+Generated.swift in Sources */,
 				7FC9EB6C2BCD68AD00922431 /* HistoryModel.swift in Sources */,
+				7F4266402BD664CE00B2CAB2 /* ErrorInfo.swift in Sources */,
 				7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */,
 				7F522EC62BCED9F700FB8CB7 /* SettingCoordinator.swift in Sources */,
 				7FC9EB572BC9644200922431 /* CariierUIModel.swift in Sources */,
@@ -718,6 +726,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -751,6 +760,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

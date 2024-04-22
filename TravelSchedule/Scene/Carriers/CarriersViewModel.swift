@@ -15,12 +15,18 @@ final class CarriersViewModel: ObservableObject {
     var filterTransfer: Bool = true
     
     @Published var filterCarriers: [CarrierUIModel]
-    @Published var filterIsChange: Bool = true
+    @Published var filterIsChange: Bool
     
-    init() {
-        self.carriers = CarrierUIModel.examples
-        self.filterCarriers = CarrierUIModel.examples
+    init(carriers: [CarrierUIModel] = CarrierUIModel.examples,
+         filterCarriers: [CarrierUIModel] = CarrierUIModel.examples,
+         filterIsChange: Bool = false) {
+        self.carriers = carriers
+        self.filterCarriers = filterCarriers
+        self.filterIsChange = filterIsChange
     }
     
     static let prewiew = CarriersViewModel()
+    static let prewiewEmpty = CarriersViewModel(carriers: CarrierUIModel.examplesEmpty,
+                                                filterCarriers: CarrierUIModel.examplesEmpty,
+                                                filterIsChange: true)
 }

@@ -55,7 +55,7 @@ struct FilterScreenView: View {
             }
                 .padding(.horizontal, 16)
             VStack(spacing:0) {
-                ForEach(viewModel.timeFilters.indices) { index in
+                ForEach(viewModel.timeFilters.indices, id:\.self) { index in
                     TimeFilterView(title: viewModel.timeFilters[index].name,
                                    filterIsOn: $viewModel.timeFilters[index].filterIsOn) {
                         viewModel.timeFilters[index].changeFilter()

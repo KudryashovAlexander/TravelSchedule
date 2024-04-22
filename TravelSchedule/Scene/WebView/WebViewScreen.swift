@@ -18,10 +18,13 @@ struct WebViewScreen: View {
     }
     
     var body: some View {
-        SwiftUIWebView(url: URL(string: url))
-            .modifyNavigation(title: L.Settings.politycy) {
-                coordinator?.pop()
-            }
+        ZStack {
+            Color.tsWhiteTopic.ignoresSafeArea()
+            SwiftUIWebView(url: URL(string: url))
+                .modifyNavigation(title: L.Settings.politycy) {
+                    coordinator?.pop()
+                }
+        }
     }
 }
 

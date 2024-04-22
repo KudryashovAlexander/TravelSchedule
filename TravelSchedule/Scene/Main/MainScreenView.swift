@@ -16,30 +16,33 @@ struct MainScreenView: View {
     }
     
     var body: some View {
-        VStack(spacing: 20) {
-            HistoriesView()
-            VStack(spacing: 16) {
-                DepartureAndArrival(departure: $coordinator.departure,
-                                    arrive: $coordinator.arrive) {
-                    coordinator.currentStopType = .departure
-                    coordinator.push(.choiseCity)
-                } arriveCompletion: {
-                    coordinator.currentStopType = .arrive
-                    coordinator.push(.choiseCity)
+        ZStack {
+            Color.tsWhiteTopic.ignoresSafeArea()
+            VStack(spacing: 20) {
+                HistoriesView()
+                VStack(spacing: 16) {
+                    DepartureAndArrival(departure: $coordinator.departure,
+                                        arrive: $coordinator.arrive) {
+                        coordinator.currentStopType = .departure
+                        coordinator.push(.choiseCity)
+                    } arriveCompletion: {
+                        coordinator.currentStopType = .arrive
+                        coordinator.push(.choiseCity)
+                    }
+                    Button(action: {
+                        coordinator.push(.carriers)
+                    }, label: {
+                        Text(L.Main.find)
+                    })
+                    .frame(width: 150, height: 60)
+                    .foregroundColor(.tsWhite)
+                    .background(Color.tsBlue)
+                    .cornerRadius(16)
+                    .opacity(stateIsEmpty ? 1 : 0 )
                 }
-                Button(action: {
-                    coordinator.push(.carriers)
-                }, label: {
-                    Text(L.Main.find)
-                })
-                .frame(width: 150, height: 60)
-                .foregroundColor(.tsWhite)
-                .background(Color.tsBlue)
-                .cornerRadius(16)
-                .opacity(stateIsEmpty ? 1 : 0 )
+                .padding(.horizontal, 16)
+                Spacer()
             }
-            .padding(.horizontal, 16)
-           Spacer()
         }
     }
 }

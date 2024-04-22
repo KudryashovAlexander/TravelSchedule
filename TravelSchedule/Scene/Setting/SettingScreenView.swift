@@ -13,27 +13,30 @@ struct SettingScreenView: View {
     @EnvironmentObject private var coordinator: SettingCoordinator
     
     var body: some View {
-        VStack {
-            darkTheme
-            CellView(title: L.Settings.politycy) {
-                coordinator.push(.webView(WebViewURLs.politicy))
-            }
+        ZStack {
+            Color.tsWhiteTopic.ignoresSafeArea()
+            VStack {
+                darkTheme
+                CellView(title: L.Settings.politycy) {
+                    coordinator.push(.webView(WebViewURLs.politicy))
+                }
                 .frame(height: 60)
-            Spacer()
-            VStack(spacing: 16) {
-                Text(L.Settings.apiTitle)
-                    .multilineTextAlignment(.center)
-                    .font(Font.Regular.size12)
-                Text(L.Settings.apiVersion)
-                    .multilineTextAlignment(.center)
-                    .font(Font.Regular.size12)
+                Spacer()
+                VStack(spacing: 16) {
+                    Text(L.Settings.apiTitle)
+                        .multilineTextAlignment(.center)
+                        .font(Font.Regular.size12)
+                    Text(L.Settings.apiVersion)
+                        .multilineTextAlignment(.center)
+                        .font(Font.Regular.size12)
+                }
+                .foregroundColor(.tsBlackTopic)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 24)
+                
             }
-            .foregroundColor(.tsBlackTopic)
-            .padding(.horizontal, 16)
-            .padding(.bottom, 24)
-            
+            .preferredColorScheme(isOn ? .dark : .light)
         }
-        .preferredColorScheme(isOn ? .dark : .light)
     }
     
     private var darkTheme: some View {

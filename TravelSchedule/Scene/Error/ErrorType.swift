@@ -14,4 +14,13 @@ enum ErrorType: String, Identifiable {
     var id: String {
         "error" + self.rawValue
     }
+    
+    var info: ErrorInfo {
+        switch self {
+        case .network:
+            ErrorInfo(image: .networkError, title: L.NetworkError.connect)
+        case .server:
+            ErrorInfo(image: .serverError, title: L.NetworkError.server)
+        }
+    }
 }

@@ -33,7 +33,7 @@ struct CarrierInformationScreenView: View {
                     Image(logo)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: .infinity)
+                        .frame(maxHeight: .infinity)
                 }
                 .frame(height: 104)
                 .cornerRadius(24)
