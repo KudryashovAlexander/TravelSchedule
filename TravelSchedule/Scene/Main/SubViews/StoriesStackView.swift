@@ -1,5 +1,5 @@
 //
-//  HistoriesView.swift
+//  StoriesStackView.swift
 //  TravelSchedule
 //
 //  Created by Александр Кудряшов on 15.04.2024.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct HistoriesView: View {
+struct StoriesStackView: View {
     
-    @State private var histories: [HistoryModel] = HistoryModel.examples
+    @State private var stories: [StoryModel] = StoryModel.examples
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 12) {
-                ForEach(histories.indices, id: \.self) { index in
-                    historyView(histories[index])
+                ForEach(stories.indices, id: \.self) { index in
+                    storyView(stories[index])
                         .padding(.leading, index == 0 ? 16 : 0)
-                        .padding(.trailing, index == (histories.count - 1) ? 16 : 0)
+                        .padding(.trailing, index == (stories.count - 1) ? 16 : 0)
                 }
             }
         }
@@ -25,7 +25,7 @@ struct HistoriesView: View {
     }
     
     @ViewBuilder
-    private func historyView(_ model: HistoryModel) -> some View {
+    private func storyView(_ model: StoryModel) -> some View {
         ZStack {
             Image(model.image)
                 .resizable()
@@ -54,5 +54,5 @@ struct HistoriesView: View {
 }
 
 #Preview {
-    HistoriesView()
+    StoriesStackView()
 }

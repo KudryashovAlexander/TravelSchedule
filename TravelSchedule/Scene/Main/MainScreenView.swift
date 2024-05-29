@@ -19,7 +19,7 @@ struct MainScreenView: View {
         ZStack {
             Color.tsWhiteTopic.ignoresSafeArea()
             VStack(spacing: 20) {
-                HistoriesView()
+                StoriesStackView()
                 VStack(spacing: 16) {
                     DepartureAndArrival(departure: $coordinator.departure,
                                         arrive: $coordinator.arrive) {

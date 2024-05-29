@@ -1,5 +1,5 @@
 //
-//  HistoryModel.swift
+//  StoryModel.swift
 //  TravelSchedule
 //
 //  Created by Александр Кудряшов on 15.04.2024.
@@ -7,40 +7,40 @@
 
 import Foundation
 
-struct HistoryModel: Hashable {
+struct StoryModel: Hashable {
     let id = UUID()
     let image: ImageResource
     let title: String
     let subTitle: String
     var isViewed: Bool
     
-    static let example = HistoryModel(image: .history1,
+    static let example = StoryModel(image: .history1,
                                       title: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
-                                      subTitle: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
+                                      subTitle: "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                       isViewed: false)
     
-    static let examples: [HistoryModel] = [
-                                            HistoryModel(image: .history1,
+    static let examples: [StoryModel] = [
+                                            StoryModel(image: .history1,
                                                          title: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          subTitle: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          isViewed: false),
-                                            HistoryModel(image: .history2,
+                                            StoryModel(image: .history2,
                                                          title: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          subTitle: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          isViewed: false),
-                                            HistoryModel(image: .history3,
+                                            StoryModel(image: .history3,
                                                          title: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          subTitle: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          isViewed: true),
-                                            HistoryModel(image: .history4,
+                                            StoryModel(image: .history4,
                                                          title: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          subTitle: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          isViewed: true),
-                                            HistoryModel(image: .history5,
+                                            StoryModel(image: .history5,
                                                          title: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          subTitle: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          isViewed: true),
-                                            HistoryModel(image: .history6,
+                                            StoryModel(image: .history6,
                                                          title: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          subTitle: "Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                                          isViewed: true)]
