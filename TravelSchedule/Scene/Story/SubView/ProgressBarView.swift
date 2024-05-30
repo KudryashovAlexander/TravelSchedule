@@ -18,7 +18,7 @@ struct ProgressBarView: View {
                     RoundedRectangle(cornerRadius: 3)
                         .frame(height: 6)
                         .foregroundColor(.white)
-                    if (Float(index) - ceil(progress)) <= 0 {
+                    if (Float(index) - ceil(progress)) <= 0 && progress <= Float(numberOfSections)  {
                         GeometryReader(content: { geometry in
                             RoundedRectangle(cornerRadius: 3)
                                 .frame(width: progress >= Float(index) ?
@@ -38,7 +38,7 @@ struct ProgressBarView: View {
     Color.gray
         .ignoresSafeArea()
         .overlay(
-            ProgressBarView(numberOfSections: 5, progress: 4)
+            ProgressBarView(numberOfSections: 5, progress: 5)
                 .padding()
         )
 }

@@ -23,6 +23,7 @@
 		7F6BF9062C071FF600B20353 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6BF9052C071FF600B20353 /* StoryView.swift */; };
 		7F6BF90A2C0720E400B20353 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6BF9092C0720E400B20353 /* ProgressBarView.swift */; };
 		7F6BF90C2C073DBD00B20353 /* StoryScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6BF90B2C073DBD00B20353 /* StoryScreenView.swift */; };
+		7F6BF9322C08BCF000B20353 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6BF9312C08BCF000B20353 /* MainScreenViewModel.swift */; };
 		7FC9EAEB2BC5652800922431 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEA2BC5652800922431 /* Colors.xcassets */; };
 		7FC9EAED2BC5653400922431 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEC2BC5653400922431 /* Icons.xcassets */; };
 		7FC9EAF02BC5680C00922431 /* Font_ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EAEF2BC5680C00922431 /* Font_ext..swift */; };
@@ -54,7 +55,6 @@
 		7FC9EB5A2BCA1FED00922431 /* CarriersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB592BCA1FED00922431 /* CarriersViewModel.swift */; };
 		7FC9EB5C2BCA3EA600922431 /* DepartureAndArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB5B2BCA3EA600922431 /* DepartureAndArrival.swift */; };
 		7FC9EB5F2BCD677E00922431 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB5E2BCD677E00922431 /* MainScreenView.swift */; };
-		7FC9EB622BCD67A600922431 /* StoriesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB612BCD67A600922431 /* StoriesStackView.swift */; };
 		7FC9EB6C2BCD68AD00922431 /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9EB6B2BCD68AD00922431 /* StoryModel.swift */; };
 		7FC9F0612BA0601600C5C63D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9F0602BA0601600C5C63D /* ApiService.swift */; };
 		7FD735ED2B9314FF00C1C537 /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD735EC2B9314FF00C1C537 /* TravelScheduleApp.swift */; };
@@ -85,6 +85,7 @@
 		7F6BF9052C071FF600B20353 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		7F6BF9092C0720E400B20353 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		7F6BF90B2C073DBD00B20353 /* StoryScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScreenView.swift; sourceTree = "<group>"; };
+		7F6BF9312C08BCF000B20353 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		7FC9EAEA2BC5652800922431 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7FC9EAEC2BC5653400922431 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		7FC9EAEF2BC5680C00922431 /* Font_ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font_ext..swift; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		7FC9EB592BCA1FED00922431 /* CarriersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarriersViewModel.swift; sourceTree = "<group>"; };
 		7FC9EB5B2BCA3EA600922431 /* DepartureAndArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureAndArrival.swift; sourceTree = "<group>"; };
 		7FC9EB5E2BCD677E00922431 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
-		7FC9EB612BCD67A600922431 /* StoriesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesStackView.swift; sourceTree = "<group>"; };
 		7FC9EB6B2BCD68AD00922431 /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		7FC9F0602BA0601600C5C63D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		7FD735E92B9314FF00C1C537 /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +312,7 @@
 			children = (
 				7FC9EB692BCD689C00922431 /* Model */,
 				7FC9EB5E2BCD677E00922431 /* MainScreenView.swift */,
+				7F6BF9312C08BCF000B20353 /* MainScreenViewModel.swift */,
 				7FC9EB642BCD685B00922431 /* SubViews */,
 			);
 			path = Main;
@@ -392,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				7FC9EB5B2BCA3EA600922431 /* DepartureAndArrival.swift */,
-				7FC9EB612BCD67A600922431 /* StoriesStackView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -546,9 +546,9 @@
 				7FC9EB0A2BC5B78E00922431 /* ErrorView.swift in Sources */,
 				7F522EBE2BCED21700FB8CB7 /* SwiftUIWebView.swift in Sources */,
 				7FC9EB0E2BC5BB2E00922431 /* ErrorType.swift in Sources */,
+				7F6BF9322C08BCF000B20353 /* MainScreenViewModel.swift in Sources */,
 				7FC9EB5C2BCA3EA600922431 /* DepartureAndArrival.swift in Sources */,
 				7F522ECB2BCEDFEC00FB8CB7 /* CoordinatorProtocol.swift in Sources */,
-				7FC9EB622BCD67A600922431 /* StoriesStackView.swift in Sources */,
 				7F522EBB2BCED12800FB8CB7 /* WebViewScreen.swift in Sources */,
 				7FC9EB422BC8E39D00922431 /* ChoisenStationViewModel.swift in Sources */,
 				7FC9EB2B2BC8248400922431 /* CarrierView.swift in Sources */,
