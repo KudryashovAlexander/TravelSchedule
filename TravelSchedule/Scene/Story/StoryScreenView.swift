@@ -109,6 +109,7 @@ struct StoryScreenView: View {
     private func setProgress(_ newValue: Float) {
         if newValue > Float(stories.count) {
             progress = Float(stories.count)
+            dismiss()
         } else if newValue < 0 {
             progress = 0
         } else {
