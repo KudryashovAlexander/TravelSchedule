@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StoriesStackView: View {
     
-    @State private var stories: [StoryModel] = StoryModel.examples
+    @State private var stories: [StoryModel]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -22,6 +22,10 @@ struct StoriesStackView: View {
             }
         }
         .padding(.vertical, 24)
+    }
+    
+    init(stories: [StoryModel] = StoryModel.examples) {
+        self.stories = stories.sorted { !$0.isViewed && $1.isViewed }
     }
     
     @ViewBuilder

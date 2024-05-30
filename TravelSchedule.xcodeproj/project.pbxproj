@@ -182,9 +182,8 @@
 		7F6BF9072C0720B800B20353 /* Story */ = {
 			isa = PBXGroup;
 			children = (
-				7F6BF9052C071FF600B20353 /* StoryView.swift */,
-				7F6BF9082C0720C600B20353 /* SubView */,
 				7F6BF90B2C073DBD00B20353 /* StoryScreenView.swift */,
+				7F6BF9082C0720C600B20353 /* SubView */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -192,6 +191,7 @@
 		7F6BF9082C0720C600B20353 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				7F6BF9052C071FF600B20353 /* StoryView.swift */,
 				7F6BF9092C0720E400B20353 /* ProgressBarView.swift */,
 			);
 			path = SubView;
