@@ -9,67 +9,54 @@ import SwiftUI
 
 struct StoryScreenView: View {
     
-    private let stories: [StoryModel]
-    private var currentStory: StoryModel { stories[currentStoryIndex] }
-    private var currentStoryIndex: Int {
-        if progress > Float(stories.count - 1) {
-            return stories.count - 1
-        } else if progress <= 0{
-            return 0
-        } else {
-            return Int(progress)
-        }
-    }
-    @Environment (\.dismiss) var dismiss
+    @Binding var stories: [StoryModel]
+    @Binding private var isShowScreen: Bool
     @State private var progress: Float = 0
+    @State private var selectionTab: Int = 0
     @State private var timer: Timer.TimerPublisher
     @State private var cancellable: Cancellable?
     
-    init(stories: [StoryModel],
-        currentStory: Int) {
-        self.stories = stories
+    init(stories: Binding<[StoryModel]>,
+         isShowScreen: Binding<Bool>,
+         currentStory: Int) {
+        self._stories = stories
+        self._isShowScreen = isShowScreen
         self.progress = Float(currentStory)
+        self.selectionTab = currentStory
         timer = Self.createTimer()
     }
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Color.tsBlack.ignoresSafeArea()
-            GeometryReader { geometry in
-                StoryView(story: currentStory)
-                    .animation(
-                        Animation
-                            .easeInOut(duration: 0.5)
-                            .delay(0.5)
-                        ,value: currentStory
-                    )
-                    .gesture(
-                        DragGesture(minimumDistance: 0)
-                            .onEnded { value in
-                                let tapLocation = value.location
-                                let screenWidth = geometry.size.width
-                                if tapLocation.x < screenWidth / 2 {
-                                    nextStory(typeGesture: .left)
-                                } else {
-                                    nextStory(typeGesture: .right)
-                                }
+            TabView(selection: $selectionTab.onUpdate {
+                setProgress(Float(selectionTab))
+            }) {
+                ForEach(stories.indices, id: \.self) { index in
+                    StoryView(story: stories[index])
+                        .tag(index)
+                        .onTapGesture(count: 1, coordinateSpace: .global, perform: { point in
+                            if point.x < UIScreen.main.bounds.midX {
+                                nextStory(typeGesture: .left)
+                            } else {
+                                nextStory(typeGesture: .right)
                             }
-                    
-                    )
-                VStack(alignment: .trailing, spacing: 5) {
-                    ProgressBarView(numberOfSections: stories.count, progress: progress)
-                        .padding(.init(top: 28, leading: 12, bottom: 12, trailing: 12))
-                        .animation(
-                            .linear(duration: 0.5), value: progress
-                        )
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Image(.close)
-                    })
-                    .padding(.horizontal, 12)
+                        })
                 }
-                
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            VStack(alignment: .trailing, spacing: 5) {
+                ProgressBarView(numberOfSections: stories.count, progress: progress)
+                    .padding(.init(top: 28, leading: 12, bottom: 12, trailing: 12))
+                    .animation(
+                        .linear(duration: 0.5), value: progress
+                    )
+                Button(action: {
+                    isShowScreen = false
+                }, label: {
+                    Image(.close)
+                })
+                .padding(.horizontal, 12)
             }
             .onAppear {
                 timer = Self.createTimer()
@@ -82,7 +69,6 @@ struct StoryScreenView: View {
                 timerTick()
             })
         }
-
     }
     
     private static func createTimer() -> Timer.TimerPublisher {
@@ -103,17 +89,26 @@ struct StoryScreenView: View {
             newProgress =  progress.truncatingRemainder(dividingBy: 1) > 0.33 ? floor(progress) : floor(progress) - 1
             setProgress(newProgress)
         }
-        
     }
     
     private func setProgress(_ newValue: Float) {
         if newValue > Float(stories.count) {
             progress = Float(stories.count)
-            dismiss()
+            isShowScreen = false
         } else if newValue < 0 {
             progress = 0
         } else {
             progress = newValue
+            if Int(progress) != selectionTab {
+                withAnimation {
+                    selectionTab = Int(progress)
+                }
+            }
+            if progress.truncatingRemainder(dividingBy: 1) > 0.33 {
+                if !stories[selectionTab].isViewed {
+                    stories[selectionTab].isViewed.toggle()
+                }
+            }
         }
     }
     
@@ -123,5 +118,19 @@ struct StoryScreenView: View {
 }
 
 #Preview {
-    StoryScreenView(stories: StoryModel.examples, currentStory: 0)
+    @State var models = StoryModel.examples
+    @State var isShow = false
+    return StoryScreenView(stories: $models, isShowScreen: $isShow, currentStory: 0)
+}
+
+
+extension Binding {
+    func onUpdate(_ closure: @escaping () -> Void) -> Binding<Value> {
+        Binding(get: {
+            wrappedValue
+        }, set: { newValue in
+            wrappedValue = newValue
+            closure()
+        })
+    }
 }

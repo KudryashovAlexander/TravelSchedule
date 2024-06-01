@@ -47,9 +47,16 @@ struct MainScreenView: View {
                 Spacer()
             }
         }
-        .fullScreenCover(isPresented: $storyIsPersented, content: {
-            StoryScreenView(stories: viewModel.stories, currentStory: viewModel.currentStory)
+        .fullScreenCover(isPresented: $storyIsPersented, onDismiss: {
+            viewModel.sortStories()
+        }, content: {
+            StoryScreenView(stories: $viewModel.stories,
+                            isShowScreen: $storyIsPersented,
+                            currentStory: viewModel.currentStory)
         })
+        .onAppear {
+            viewModel.sortStories()
+        }
     }
     
     private var storiesStackView: some View {
@@ -81,7 +88,7 @@ struct MainScreenView: View {
                 .stroke(lineWidth: 8)
                 .foregroundColor(.tsBlue)
                 .opacity(model.isViewed ? 0 : 1)
-                
+            
             VStack {
                 Spacer()
                 Text(model.title)
@@ -96,10 +103,11 @@ struct MainScreenView: View {
         .frame(width: 92, height: 140)
         .opacity(model.isViewed ? 0.5 : 1)
     }
+    
 }
 
 #Preview {
     @StateObject var coordinator = MainCoordinator.preview
     return MainScreenView()
-            .environmentObject(coordinator)
+        .environmentObject(coordinator)
 }
