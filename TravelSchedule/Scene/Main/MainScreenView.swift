@@ -11,6 +11,9 @@ struct MainScreenView: View {
     
     @EnvironmentObject private var coordinator: MainCoordinator
     
+    @State private var storyIsPersented: Bool = false
+    @ObservedObject private var viewModel = MainScreenViewModel()
+    
     private var stateIsEmpty: Bool {
         !coordinator.departure.isEmpty && !coordinator.arrive.isEmpty
     }
@@ -19,7 +22,7 @@ struct MainScreenView: View {
         ZStack {
             Color.tsWhiteTopic.ignoresSafeArea()
             VStack(spacing: 20) {
-                HistoriesView()
+                storiesStackView
                 VStack(spacing: 16) {
                     DepartureAndArrival(departure: $coordinator.departure,
                                         arrive: $coordinator.arrive) {
@@ -44,11 +47,67 @@ struct MainScreenView: View {
                 Spacer()
             }
         }
+        .fullScreenCover(isPresented: $storyIsPersented, onDismiss: {
+            viewModel.sortStories()
+        }, content: {
+            StoryScreenView(stories: $viewModel.stories,
+                            isShowScreen: $storyIsPersented,
+                            currentStory: viewModel.currentStory)
+        })
+        .onAppear {
+            viewModel.sortStories()
+        }
     }
+    
+    private var storiesStackView: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 12) {
+                ForEach(viewModel.stories.indices, id: \.self) { index in
+                    storyView(viewModel.stories[index])
+                        .padding(.leading, index == 0 ? 16 : 0)
+                        .padding(.trailing, index == (viewModel.stories.count - 1) ? 16 : 0)
+                        .onTapGesture {
+                            viewModel.currentStory = index
+                            storyIsPersented.toggle()
+                        }
+                }
+            }
+        }
+        .padding(.vertical, 24)
+    }
+    
+    @ViewBuilder
+    private func storyView(_ model: StoryModel) -> some View {
+        ZStack {
+            Image(model.image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 92, height: 140)
+            
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(lineWidth: 8)
+                .foregroundColor(.tsBlue)
+                .opacity(model.isViewed ? 0 : 1)
+            
+            VStack {
+                Spacer()
+                Text(model.title)
+                    .font(.Regular.size12)
+                    .lineLimit(3)
+                    .foregroundColor(.tsWhite)
+                    .padding(.horizontal, 8)
+                    .padding(.bottom,12)
+            }
+        }
+        .cornerRadius(16)
+        .frame(width: 92, height: 140)
+        .opacity(model.isViewed ? 0.5 : 1)
+    }
+    
 }
 
 #Preview {
     @StateObject var coordinator = MainCoordinator.preview
     return MainScreenView()
-            .environmentObject(coordinator)
+        .environmentObject(coordinator)
 }
